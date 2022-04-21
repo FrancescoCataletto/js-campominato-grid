@@ -60,6 +60,15 @@ header{
     justify-content: center;
     align-items: center;
     border: 2px solid black;
+    cursor: pointer;
+}
+
+.cell:hover{
+    transform: scale(1.1);
+}
+
+.cell:active{
+    transform: scale(1);
 }
 
 .clicked{
