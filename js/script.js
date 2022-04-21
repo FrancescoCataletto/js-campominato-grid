@@ -30,6 +30,9 @@ function initFunction(){
     for(let i = 0; i < num; i++){
         const cell = squareGenerator(container);
         cell.innerHTML = i + 1;
+        cell.addEventListener("click", function(){
+            cell.classList.add("clicked");
+        })
     }
 }
 
