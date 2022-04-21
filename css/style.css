@@ -27,14 +27,6 @@ header{
     padding: 5px 10px;
 }
 
-.hidden{
-    display: none;
-}
-
-.visible{
-    display: inline-block;
-}
-
 #main-wrapper{
     display: flex;
     justify-content: center;
@@ -52,7 +44,6 @@ header{
     width: 60vh;
     min-width: 300px;
     background-color: white;
-    overflow: hidden;
 }
 
 .cell{

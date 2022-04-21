@@ -11,7 +11,6 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 document.getElementById("start-btn").addEventListener("click", initFunction);
 const container = document.getElementById("square-container");
-const reload = document.getElementById("play-again");
 
 // SELEZIONE DEL LIVELLO DALL'HTML
 const options = document.getElementById("level");
@@ -20,8 +19,8 @@ const medium = options[1].value;
 const hard = options[2].value;
 
 function initFunction(){
-    // SCELTA DEL NUMERO IN BASE AL LIVELLO DEL GIOCO
-    
+    // SCELTA DEL NUMERO IN BASE AL LIVELLO DEL GIOCO E PULIZIA DEL CONTAINER
+    container.innerHTML = " ";
     const userLevel = numList();
 
     // CREA QUADRATINI IN BASE AL NUMERO CORRISPONDENTE AL LIVELLO SCELTO DLL'USER
@@ -32,13 +31,7 @@ function initFunction(){
             cell.classList.add("clicked", "white");
         })
     }
-    // BOTTONE PER FARE UN REFRESH DELLA PAGINA E INIZIARE UNA NUOVA PARTITA
-    reload.classList.add("visible");
-    reload.classList.remove("hidden");
-
-    reload.addEventListener("click", function(){
-        window.location.reload();
-    })
+    
 }
 
 // ----------------
@@ -54,6 +47,7 @@ function squareGenerator(target){
         cell.classList.add("cell", "x10");
     }
     target.append(cell);
+    console.log(cell);
     return cell;
 }
 
