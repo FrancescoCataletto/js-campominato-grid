@@ -54,6 +54,15 @@ header{
     cursor: pointer;
 }
 
+
+.hidden{
+    display: none;
+}
+
+.visible{
+    display: inline-block;
+}
+
 .cell:hover{
     transform: scale(1.1);
 }

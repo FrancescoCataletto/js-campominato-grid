@@ -26,9 +26,10 @@ function initFunction(){
     // CREA QUADRATINI IN BASE AL NUMERO CORRISPONDENTE AL LIVELLO SCELTO DLL'USER
     for(let i = 1; i <= userLevel; i++){
         const cell = squareGenerator(container);
-        cell.innerHTML = i;
+        cell.innerHTML = `<span class="hidden">${i}</span>`;
         cell.addEventListener("click", function(){
             cell.classList.add("clicked", "white");
+            cell.firstChild.classList.add("visible");
         })
     }
     
