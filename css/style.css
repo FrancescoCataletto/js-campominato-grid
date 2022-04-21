@@ -62,7 +62,7 @@ header{
     height: calc(100% / 7);
 }
 
-/* .x9{
+.x9{
     width: calc(100% / 9);
     height: calc(100% / 9);
 }
@@ -70,4 +70,4 @@ header{
 .x10{
     width: calc(100% / 10);
     height: calc(100% / 10);
-} */
+}
