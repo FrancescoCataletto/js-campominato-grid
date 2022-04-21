@@ -13,12 +13,14 @@ document.getElementById("start-btn").addEventListener("click", initFunction);
 const container = document.getElementById("square-container");
 const reload = document.getElementById("play-again");
 
+// SELEZIONE DEL LIVELLO DALL'HTML
 const options = document.getElementById("level");
 const easy = options[0].value;
 const medium = options[1].value;
 const hard = options[2].value;
 
 function initFunction(){
+    // SCELTA DEL NUMERO IN BASE AL LIVELLO DEL GIOCO
     let num;
     if(options.value === hard){
         num = 49;
@@ -28,6 +30,7 @@ function initFunction(){
         num = 100;
     }
 
+    // CREA QUADRATINI IN BASE AL NUMERO CORRISPONDENTE AL LIVELLO SCELTO DLL'USER
     for(let i = 1; i <= num; i++){
         const cell = squareGenerator(container);
         cell.innerHTML = i;
@@ -36,6 +39,8 @@ function initFunction(){
         })
     }
 
+
+    // BOTTONE PER FARE UN REFRESH DELLA PAGINA E INIZIARE UNA NUOVA PARTITA
     reload.classList.add("visible");
     reload.classList.remove("hidden");
 
@@ -44,6 +49,7 @@ function initFunction(){
     })
 }
 
+// FUNZIONE CHE CREA IL DIV DEI QUADRATI, GLI METTE LE CLASSI ADEGUATE AL LIVELLO E STAMPA TUTTO NEL CONTAINER DELL'HTML
 function squareGenerator(target){
     const cell = document.createElement("div");
     if(options.value === hard){
