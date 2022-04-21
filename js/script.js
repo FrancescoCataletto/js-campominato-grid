@@ -38,6 +38,10 @@ function initFunction(){
 
     reload.classList.add("visible");
     reload.classList.remove("hidden");
+
+    reload.addEventListener("click", function(){
+        window.location.reload();
+    })
 }
 
 function squareGenerator(target){
