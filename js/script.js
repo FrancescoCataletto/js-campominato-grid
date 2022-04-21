@@ -9,8 +9,23 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 */
 
-document.getElementById("start-btn").addEventListener("click", initFunction);
+// document.getElementById("start-btn").addEventListener("click", initFunction);
+const container = document.getElementById("square-container");
+
+
+
+initFunction();
 
 function initFunction(){
-    console.log("ciao");
+    for(let i = 0; i < 49; i++){
+        const cell = squareGenerator(container);
+    }
 }
+
+
+function squareGenerator(target){
+    const cell = document.createElement("div");
+    cell.classList.add("cell", "x7", "clicked"); 
+    target.append(cell);
+}
+

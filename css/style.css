@@ -32,7 +32,7 @@ header{
     justify-content: center;
     align-items: center;
     background-color: rgb(0, 22, 50);
-    height: 100vh;
+    height: calc(100vh - 70px);
 }
 
 #square-container{
@@ -46,7 +46,7 @@ header{
     background-color: white;
 }
 
-#cell{
+.cell{
     display: flex;
     justify-content: center;
     align-items: center;
