@@ -21,25 +21,17 @@ const hard = options[2].value;
 
 function initFunction(){
     // SCELTA DEL NUMERO IN BASE AL LIVELLO DEL GIOCO
-    let num;
-    if(options.value === hard){
-        num = 49;
-    }else if(options.value === medium){
-        num = 81;
-    }else if(options.value === easy){
-        num = 100;
-    }
+    
+    const userLevel = numList();
 
     // CREA QUADRATINI IN BASE AL NUMERO CORRISPONDENTE AL LIVELLO SCELTO DLL'USER
-    for(let i = 1; i <= num; i++){
+    for(let i = 1; i <= userLevel; i++){
         const cell = squareGenerator(container);
         cell.innerHTML = i;
         cell.addEventListener("click", function(){
             cell.classList.add("clicked", "white");
         })
     }
-
-
     // BOTTONE PER FARE UN REFRESH DELLA PAGINA E INIZIARE UNA NUOVA PARTITA
     reload.classList.add("visible");
     reload.classList.remove("hidden");
@@ -48,6 +40,8 @@ function initFunction(){
         window.location.reload();
     })
 }
+
+// ----------------
 
 // FUNZIONE CHE CREA IL DIV DEI QUADRATI, GLI METTE LE CLASSI ADEGUATE AL LIVELLO E STAMPA TUTTO NEL CONTAINER DELL'HTML
 function squareGenerator(target){
@@ -63,4 +57,18 @@ function squareGenerator(target){
     return cell;
 }
 
+// ----------------
 
+// FUNZIONE PER ASSEGNARE UN NUMERO AD UN LIVELLO
+
+function numList(){
+    let num;
+    if(options.value === hard){
+        num = 49;
+    }else if(options.value === medium){
+        num = 81;
+    }else if(options.value === easy){
+        num = 100;
+    }
+    return num;
+}
