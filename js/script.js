@@ -18,7 +18,16 @@ const medium = options[1].value;
 const hard = options[2].value;
 
 function initFunction(){
-    for(let i = 0; i < 49; i++){
+    let num;
+    if(options.value === hard){
+        num = 49;
+    }else if(options.value === medium){
+        num = 81;
+    }else if(options.value === easy){
+        num = 100;
+    }
+    
+    for(let i = 0; i < num; i++){
         const cell = squareGenerator(container);
     }
 }
@@ -26,14 +35,15 @@ function initFunction(){
 function squareGenerator(target){
     const cell = document.createElement("div");
     if(options.value === hard){
-        cell.classList.add("cell", "x7", "clicked");
+        cell.classList.add("cell", "x7");
     }else if(options.value === medium){
-        cell.classList.add("cell", "x9", "clicked");
+        cell.classList.add("cell", "x9");
     }else if(options.value === easy){
-        cell.classList.add("cell", "x10", "clicked");
+        cell.classList.add("cell", "x10");
     }
     target.append(cell);
+    return cell;
 }
 
 
-console.log(options);
+
