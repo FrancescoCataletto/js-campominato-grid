@@ -26,9 +26,10 @@ function initFunction(){
     }else if(options.value === easy){
         num = 100;
     }
-    
+
     for(let i = 0; i < num; i++){
         const cell = squareGenerator(container);
+        cell.innerHTML = i + 1;
     }
 }
 
