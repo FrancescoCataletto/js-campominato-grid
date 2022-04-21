@@ -11,6 +11,7 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 document.getElementById("start-btn").addEventListener("click", initFunction);
 const container = document.getElementById("square-container");
+const reload = document.getElementById("play-again");
 
 const options = document.getElementById("level");
 const easy = options[0].value;
@@ -27,13 +28,16 @@ function initFunction(){
         num = 100;
     }
 
-    for(let i = 0; i < num; i++){
+    for(let i = 1; i <= num; i++){
         const cell = squareGenerator(container);
-        cell.innerHTML = i + 1;
+        cell.innerHTML = i;
         cell.addEventListener("click", function(){
-            cell.classList.add("clicked");
+            cell.classList.add("clicked", "white");
         })
     }
+
+    reload.classList.add("visible");
+    reload.classList.remove("hidden");
 }
 
 function squareGenerator(target){
@@ -48,6 +52,5 @@ function squareGenerator(target){
     target.append(cell);
     return cell;
 }
-
 
 
